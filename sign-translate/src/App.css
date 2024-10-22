@@ -1,0 +1,174 @@
+/* General Styles */
+body {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #2d2d2d;
+  padding: 10px 20px; /* Reduced padding */
+  position: relative; /* Needed for positioning the logo */
+}
+
+.app-header h1 {
+  margin-left: 50px; /* Reduced margin to bring it closer */
+  z-index: 2; /* Ensure the heading appears above other content */
+  font-size: 30px; /* Slightly smaller font for a sleek look */
+}
+
+header::before {
+  content: '';
+  background-image: url('logo.ico'); /* Path to your logo */
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 10px; /* Adjust position from the left */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  width: 50px; /* Reduced logo size */
+  height: 50px; /* Reduced logo size */
+  z-index: 1; /* Ensure logo is behind the heading */
+}
+
+.text-button {
+  background-color: #3a3a3a;
+  border: none;
+  color: #2196f3;
+  padding: 5px 15px; /* Smaller padding for the button */
+  cursor: pointer;
+  margin-top: 0; /* Aligned with the header */
+  margin-left: auto; /* Pushes the button to the far right */
+  font-size: 14px; /* Smaller font for sleekness */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.text-button:hover {
+  background-color: #2a2a2a; /* Change background on hover */
+}
+
+.capture-button {
+  background-color: #032543; /* A blue shade */
+  color: white;
+  font-size: 20px; /* Increase the font size */
+  padding: 7px 40px; /* Increase padding for a larger button */
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  width:fit-content;
+  margin-left:680px;
+  margin-top:10px;
+}
+
+.capture-button:hover {
+  background-color: #1565c0; /* Darker blue for hover */
+}
+
+.capture-button:focus {
+  outline: none;
+  box-shadow: 0 0 10px #5a82af; /* Add a glow effect on focus */
+}
+
+
+.tab-group {
+  display: flex;
+}
+
+.tab {
+  background-color: #2d2d2d;
+  border: none;
+  color: #ffffff;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.tab.active {
+  color: #2196f3;
+}
+
+.tab:hover {
+  color: #2196f3; /* Change color on hover */
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.video-section,
+.output-section {
+  background-color: #2d2d2d;
+  width: 45%;
+  height: 60vh;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 5px; /* Added rounded corners for sections */
+}
+
+/* Footer */
+.app-footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #2d2d2d;
+  padding: 10px 0;
+}
+
+.footer-button {
+  background-color: transparent;
+  border: none;
+  color: #2196f3;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.footer-button:hover {
+  color: #ffffff; /* Change text color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column; /* Stack video and output sections */
+    align-items: center;
+  }
+
+  .video-section,
+  .output-section {
+    width: 90%; /* Make sections wider on smaller screens */
+    height: auto; /* Adjust height to auto */
+    margin-bottom: 20px; /* Add space between sections */
+  }
+
+  .app-header h1 {
+    font-size: 24px; /* Smaller font for smaller screens */
+    margin-left: 20px; /* Adjust margin for smaller screens */
+  }
+
+  .text-button,
+  .footer-button {
+    font-size: 12px; /* Smaller font for buttons */
+    padding: 5px 10px; /* Adjust padding */
+  }
+
+  .capture-button {
+    font-size: 14px; /* Smaller font size */
+    padding: 8px 12px; /* Adjust padding */
+    
+  }
+}
